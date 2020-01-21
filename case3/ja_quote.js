@@ -1,3 +1,4 @@
+"use strict";
 /*
    New Perspectives on HTML5 and CSS3, 7th Edition
    Tutorial 9
@@ -13,6 +14,17 @@
 
 */
 
+//generates a random number from 0 to 9, which decides which quote is chosen and put into the HTML
+var randomQ = randomInt(0,10);
+function randomInt(lowest, size){
+   var randy = Math.floor(Math.random() * size + lowest);
+   return randy;
+}
+//gets the first quote from the string, it goes from 0 to 9
+var quoteElem = document.getElementsByTagName("quote")[0];
+
+//displays the quotes in the HTML
+quoteElem.innerHTML = getQuote(randomQ);
 
 function getQuote(n) {
    var quotes = [
